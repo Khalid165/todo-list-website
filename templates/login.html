@@ -1,0 +1,23 @@
+{%import "Bootstrap/wtf.html" as wtf%}
+{%include 'header.html'%}
+<div class="float-container">
+
+  <div class="float-child" style="padding-top:100px;">
+    <h1 class="welcome">Welcome Back!</h1>
+    <p>Login to continue</p>
+    {% with message=get_flashed_messages()%}
+    {%if message%}
+    <p style="color:red;">{{message[0]}}</p>
+    {%endif%}
+    {%endwith%}
+    {{wtf.quick_form(form,button_map={'submit':"primary"})}}
+    <p><a href="{{url_for('new_account')}}">create new account</a></p>
+  </div>
+
+  <div class="float-child">
+    <div ><img src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?w=2000" style="width:100%;"></div>
+  </div>
+
+</div>
+
+{%include 'footer.html'%}

@@ -1,0 +1,24 @@
+{%include "header.html"%}
+
+  <h1 style="padding:50px;">Hello {{request.args.get('user')}}</h1>
+
+{%if list%}
+{%for item in list%}
+
+        <div class="card" style="margin:50px;">
+          <div class="card-header">
+            To Do.
+          </div>
+          <div class="card-body">
+            <h5   class="card-title">{{item}}</h5>
+            <a   href="{{url_for('delete_item',user=request.args.get('user'),id=request.args.get('id'),done=item)}}" class="btn btn-dark">Done</a>
+          </div>
+        </div>
+
+
+
+{%endfor%}
+{%else%}
+<h2 style="color:red;text-align:center;padding:100px;">{{error}}</h2>
+{%endif%}
+{%include "footer.html"%}

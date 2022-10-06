@@ -1,0 +1,19 @@
+{% import "Bootstrap/wtf.html" as wtf%}
+{%include "header.html"%}
+
+<div class="float-container">
+
+  <div class="float-child" style="padding-top:100px;">
+    <h1 class="welcome">Join Us!</h1>
+    <p>Sign Up</p>
+    {{wtf.quick_form(form,button_map={'submit':"primary"})}}
+
+  </div>
+
+  <div class="float-child">
+    <div clss="i"><img src="https://static.vecteezy.com/system/resources/previews/003/689/218/original/online-registration-or-sign-up-login-for-account-on-smartphone-app-user-interface-with-secure-password-mobile-application-for-ui-web-banner-access-cartoon-people-illustration-vector.jpg" style="width:100%; padding-bottom:150px;"></div>
+  </div>
+
+</div>
+
+{%include "footer.html"%}

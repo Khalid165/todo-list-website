@@ -1,0 +1,12 @@
+{%import "Bootstrap/wtf.html" as wtf%}
+{%include "header.html"%}
+    <div style="padding:100px 200px;" >
+
+        <h1>Plans for Your Day.</h1>
+        {{wtf.quick_form(form,button_map={'submit':'primary'})}}
+        <a href="{{url_for('list',user=request.args.get('user'),id=request.args.get('id'))}}" class="btn btn-dark">Go to Your List</a>
+
+    </div>
+
+
+{%include "footer.html"%}
